@@ -14,11 +14,12 @@ def calcIoU(poly1, poly2):
     else:
         intersec_area = intersec_poly.area()
         union_area = poly1.area() + poly2.area() - intersec_area
+        print("time consumed: {}".format(time() - st))
         if union_area <= 0:
             # error handle
             return -1
         return intersec_area / union_area
-    print("time consumed: {}".format(time() - st))
+
 
 
 if __name__ == "__main__":
